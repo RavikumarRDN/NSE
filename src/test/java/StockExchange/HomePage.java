@@ -32,6 +32,10 @@ public class HomePage {
 	WebElement marketData;
 	@FindBy(xpath = "//a[normalize-space()='New Listings']")
 	WebElement newList;
+	@FindBy(xpath = "//a[@id='link_4']")
+	WebElement list;
+	@FindBy(xpath = "//a[normalize-space()='On-boarding Process']")
+	WebElement onBoarding;
 	
 	public void closeNotifyWindow() {
 		waitSomeTime(closeDialogBox);
@@ -46,6 +50,19 @@ public class HomePage {
 		waitSomeTime(aboutNSE);
 		System.out.println("Displayed the About US" + aboutNSE.isDisplayed());
 		action.moveToElement(aboutNSE).click().build().perform();
+	}
+	
+	public void openingList() {
+		driver.manage().deleteAllCookies();
+		driver.get("https://www.nseindia.com/");
+		waitSomeTime(closeDialogBox);
+		System.out.println("Displayed the dialogBox" + closeDialogBox.isDisplayed());
+		closeDialogBox.click();
+		waitElementShow(list);
+		waitSomeTime(list);
+		action.moveToElement(list).click().build().perform();
+		waitSomeTime(onBoarding);
+		action.click(onBoarding);
 	}
 	
 	public void waitSomeTime(WebElement ele) {

@@ -24,7 +24,11 @@ public class BaseStock {
 		hp.closeNotifyWindow();
 		hp.openAboutNSE();
 		
-		
+	}
+	
+	@Test
+	public void openingList() {
+		hp.openingList();
 	}
 
 }

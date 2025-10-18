@@ -34,6 +34,7 @@ public class BaseStock {
 	@Test
 	public void openingInvest() {
 		hp.openingInvest();
+		//Based on the web hook checking going to changes the code
 	}
 
 }

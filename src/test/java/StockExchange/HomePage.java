@@ -28,14 +28,16 @@ public class HomePage {
 	WebElement about;
 	@FindBy(xpath = "//a[contains(@class,'nav-link')][normalize-space()='About Us']")
 	WebElement aboutNSE;
-	@FindBy(xpath = "//a[@id='link_2']")
-	WebElement marketData;
-	@FindBy(xpath = "//a[normalize-space()='New Listings']")
-	WebElement newList;
 	@FindBy(xpath = "//a[@id='link_4']")
 	WebElement list;
 	@FindBy(xpath = "//a[normalize-space()='On-boarding Process']")
 	WebElement onBoarding;
+	@FindBy(xpath = "//a[normalize-space()='New Listings']")
+	WebElement newList;
+	@FindBy(xpath = "//a[@id='link_3']")
+	WebElement invest;
+	@FindBy(xpath = "//a[normalize-space()='Charges and Taxes']")
+	WebElement ChargesandTaxes;
 	
 	public void closeNotifyWindow() {
 		waitSomeTime(closeDialogBox);
@@ -63,6 +65,20 @@ public class HomePage {
 		action.moveToElement(list).click().build().perform();
 		waitSomeTime(onBoarding);
 		action.click(onBoarding);
+	}
+	
+	public void openingInvest() {
+		driver.manage().deleteAllCookies();
+		driver.get("https://www.nseindia.com/");
+		waitSomeTime(closeDialogBox);
+		System.out.println("Displayed the dialogBox" + closeDialogBox.isDisplayed());
+		closeDialogBox.click();
+		waitElementShow(invest);
+		waitSomeTime(invest);
+		action.moveToElement(invest).click().build().perform();
+		waitSomeTime(ChargesandTaxes);
+		action.click(ChargesandTaxes);
+
 	}
 	
 	public void waitSomeTime(WebElement ele) {

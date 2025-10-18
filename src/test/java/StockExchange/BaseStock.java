@@ -30,5 +30,10 @@ public class BaseStock {
 	public void openingList() {
 		hp.openingList();
 	}
+	
+	@Test
+	public void openingInvest() {
+		hp.openingInvest();
+	}
 
 }

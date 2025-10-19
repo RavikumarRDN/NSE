@@ -2,23 +2,31 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-18T11:46:53 IST" name="Default suite" finished-at="2025-10-18T11:47:30 IST" duration-ms="36474">
+  <suite started-at="2025-10-19T12:21:59 IST" name="Default suite" finished-at="2025-10-19T12:22:18 IST" duration-ms="18257">
     <groups>
     </groups>
-    <test started-at="2025-10-18T11:46:53 IST" name="Default test" finished-at="2025-10-18T11:47:30 IST" duration-ms="36474">
+    <test started-at="2025-10-19T12:21:59 IST" name="Default test" finished-at="2025-10-19T12:22:18 IST" duration-ms="18257">
       <class name="StockExchange.BaseStock">
-        <test-method signature="openingAboutNSE()[pri:0, instance:StockExchange.BaseStock@689604d9]" started-at="2025-10-18T11:46:53 IST" name="openingAboutNSE" finished-at="2025-10-18T11:47:21 IST" duration-ms="27523" status="PASS">
+        <test-method is-config="true" signature="initialization()[pri:0, instance:StockExchange.BaseStock@6a6cb05c]" started-at="2025-10-19T12:22:00 IST" name="initialization" finished-at="2025-10-19T12:22:08 IST" duration-ms="8089" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method signature="openingAboutNSE()[pri:0, instance:StockExchange.BaseStock@6a6cb05c]" started-at="2025-10-19T12:22:08 IST" name="openingAboutNSE" finished-at="2025-10-19T12:22:13 IST" duration-ms="5437" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openingAboutNSE -->
-        <test-method signature="openingInvest()[pri:0, instance:StockExchange.BaseStock@689604d9]" started-at="2025-10-18T11:47:21 IST" name="openingInvest" finished-at="2025-10-18T11:47:27 IST" duration-ms="5748" status="PASS">
+        <test-method signature="openingInvest()[pri:0, instance:StockExchange.BaseStock@6a6cb05c]" started-at="2025-10-19T12:22:13 IST" name="openingInvest" finished-at="2025-10-19T12:22:15 IST" duration-ms="2341" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openingInvest -->
-        <test-method signature="openingList()[pri:0, instance:StockExchange.BaseStock@689604d9]" started-at="2025-10-18T11:47:27 IST" name="openingList" finished-at="2025-10-18T11:47:30 IST" duration-ms="3141" status="PASS">
+        <test-method signature="openingList()[pri:0, instance:StockExchange.BaseStock@6a6cb05c]" started-at="2025-10-19T12:22:15 IST" name="openingList" finished-at="2025-10-19T12:22:17 IST" duration-ms="1904" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openingList -->
+        <test-method is-config="true" signature="close()[pri:0, instance:StockExchange.BaseStock@6a6cb05c]" started-at="2025-10-19T12:22:17 IST" name="close" finished-at="2025-10-19T12:22:18 IST" duration-ms="393" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
       </class> <!-- StockExchange.BaseStock -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

@@ -9,16 +9,23 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 
 public class HomePage {
 	WebDriver driver;
 	WebDriverWait wait;
 	Actions action;
+	String titleHome="NSE - National Stock Exchange of India Ltd: Live Share/Stock Market News &amp; Updates, Quotes- Nseindia.com";
+	String titleNSE="NSE - National Stock Exchange of India Ltd.";
+	String titleList="Overview";
+	String titleInvest="Stamp Duty, Compliance for Trading Members - NSE India";
+	SoftAssert softassert;
 
 	public HomePage(WebDriver driver) {
 		this.driver=driver;
 		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		action=new Actions(driver);
+		softassert=new SoftAssert();
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -52,6 +59,8 @@ public class HomePage {
 		waitSomeTime(aboutNSE);
 		System.out.println("Displayed the About US" + aboutNSE.isDisplayed());
 		action.moveToElement(aboutNSE).click().build().perform();
+		softassert.assertEquals(titleNSE, driver.getTitle());
+		System.out.println("Successfully executed first Test Case");
 	}
 	
 	public void openingList() {
@@ -65,6 +74,8 @@ public class HomePage {
 		action.moveToElement(list).click().build().perform();
 		waitSomeTime(onBoarding);
 		action.click(onBoarding);
+		softassert.assertEquals(titleList, driver.getTitle());
+		System.out.println("Successfully executed second Test Case");
 	}
 	
 	public void openingInvest() {
@@ -78,7 +89,17 @@ public class HomePage {
 		action.moveToElement(invest).click().build().perform();
 		waitSomeTime(ChargesandTaxes);
 		action.click(ChargesandTaxes);
+		softassert.assertEquals(titleInvest, driver.getTitle());
+		softassert.assertAll();
+		System.out.println("Successfully executed third Test Case");
 
+	}
+	
+	public void failTest() {
+		driver.navigate().back();
+		action.moveToElement(about).click().build().perform();
+		System.out.println("Test case is failed due to the requirement and understand purpose");
+		
 	}
 	
 	public void waitSomeTime(WebElement ele) {
@@ -88,5 +109,6 @@ public class HomePage {
 	public void waitElementShow(WebElement ele1) {
 		wait.until(ExpectedConditions.visibilityOf(ele1));
 	}
+	
 
 }

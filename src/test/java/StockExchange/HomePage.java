@@ -1,5 +1,7 @@
 package StockExchange;
 
+import static org.testng.Assert.assertTrue;
+
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
@@ -15,7 +17,7 @@ public class HomePage {
 	WebDriver driver;
 	WebDriverWait wait;
 	Actions action;
-	String titleHome="NSE - National Stock Exchange of India Ltd: Live Share/Stock Market News &amp; Updates, Quotes- Nseindia.com";
+	String titleHome=" Ravikumar NSE - National Stock Exchange of India Ltd: Live Share/Stock Market News &amp; Updates, Quotes- Nseindia.com";
 	String titleNSE="NSE - National Stock Exchange of India Ltd.";
 	String titleList="Overview";
 	String titleInvest="Stamp Duty, Compliance for Trading Members - NSE India";
@@ -60,6 +62,7 @@ public class HomePage {
 		System.out.println("Displayed the About US" + aboutNSE.isDisplayed());
 		action.moveToElement(aboutNSE).click().build().perform();
 		softassert.assertEquals(titleNSE, driver.getTitle());
+		//assert.assertTrue(driver.getTitle(), titleNSE);
 		System.out.println("Successfully executed first Test Case");
 	}
 	

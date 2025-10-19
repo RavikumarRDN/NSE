@@ -8,7 +8,6 @@
     <classes>
       <class name="StockExchange.BaseStock">
         <methods>
-          <include name="testFailExample"/>
           <include name="close"/>
           <include name="openingInvest"/>
           <include name="initialization"/>

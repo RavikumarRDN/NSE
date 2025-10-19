@@ -76,7 +76,7 @@ public class HomePage {
 		waitSomeTime(list);
 		action.moveToElement(list).click().build().perform();
 		waitSomeTime(onBoarding);
-		action.click(onBoarding);
+		action.click(onBoarding).build().perform();
 		softassert.assertEquals(titleList, driver.getTitle());
 		System.out.println(driver.getTitle()+ " EXPECTED" + titleList);
 		System.out.println("Successfully executed second Test Case");
@@ -93,7 +93,7 @@ public class HomePage {
 		waitSomeTime(invest);
 		action.moveToElement(invest).click().build().perform();
 		waitSomeTime(ChargesandTaxes);
-		action.click(ChargesandTaxes);
+		action.click(ChargesandTaxes).build().perform();
 		System.out.println(driver.getTitle()+ " EXPECTED" + titleInvest);
 		softassert.assertEquals(titleInvest, driver.getTitle());
 		softassert.assertAll();

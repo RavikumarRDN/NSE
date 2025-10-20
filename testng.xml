@@ -6,7 +6,8 @@
 	</listeners>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="StockExchange.BaseStock"/>
+		<class name="StockExchange.BestLearn"/>
+      <class name="Learn.BestLearn"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

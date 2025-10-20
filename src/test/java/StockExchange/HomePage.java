@@ -17,20 +17,24 @@ public class HomePage {
 	WebDriver driver;
 	WebDriverWait wait;
 	Actions action;
-	String titleHome="NSE - National Stock Exchange of India Ltd: Live Share/Stock Market News &amp; Updates, Quotes- Nseindia.com";
-	String titleNSE="NSE - National Stock Exchange of India Ltd.";
-	String titleList="Overview";
-	String titleInvest="Stamp Duty, Compliance for Trading Members - NSE India";
+	String titleHome = "NSE - National Stock Exchange of India Ltd: Live Share/Stock Market News &amp; Updates, Quotes- Nseindia.com";
+	String titleNSE = "NSE - National Stock Exchange of India Ltd.";
+	String titleList = "Overview";
+	String titleInvest = "Stamp Duty, Compliance for Trading Members - NSE India";
 	SoftAssert softassert;
 
 	public HomePage(WebDriver driver) {
-		this.driver=driver;
+		this.driver = driver;
 		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		action=new Actions(driver);
-		softassert=new SoftAssert();
+		action = new Actions(driver);
+		softassert = new SoftAssert();
 		PageFactory.initElements(driver, this);
 	}
-	
+
+	public HomePage() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@FindBy(xpath = "//button[@aria-label='Close']")
 	WebElement closeDialogBox;
 	@FindBy(xpath = "(//a[normalize-space()='About'])[1]")
@@ -47,13 +51,13 @@ public class HomePage {
 	WebElement invest;
 	@FindBy(xpath = "//a[normalize-space()='Charges and Taxes']")
 	WebElement ChargesandTaxes;
-	
+
 	public void closeNotifyWindow() {
 		waitSomeTime(closeDialogBox);
 		System.out.println("Displayed the dialogBox" + closeDialogBox.isDisplayed());
 		closeDialogBox.click();
 	}
-	
+
 	public void openAboutNSE() {
 		waitSomeTime(about);
 		System.out.println("Displayed the about" + about.isDisplayed());
@@ -65,7 +69,7 @@ public class HomePage {
 		System.out.println("Successfully executed first Test Case");
 		softassert.assertAll();
 	}
-	
+
 	public void openingList() {
 		driver.manage().deleteAllCookies();
 		driver.get("https://www.nseindia.com/");
@@ -78,11 +82,11 @@ public class HomePage {
 		waitSomeTime(onBoarding);
 		action.click(onBoarding).build().perform();
 		softassert.assertEquals(titleList, driver.getTitle());
-		System.out.println(driver.getTitle()+ " EXPECTED" + titleList);
+		System.out.println(driver.getTitle() + " EXPECTED" + titleList);
 		System.out.println("Successfully executed second Test Case");
 		softassert.assertAll();
 	}
-	
+
 	public void openingInvest() {
 		driver.manage().deleteAllCookies();
 		driver.get("https://www.nseindia.com/");
@@ -94,20 +98,21 @@ public class HomePage {
 		action.moveToElement(invest).click().build().perform();
 		waitSomeTime(ChargesandTaxes);
 		action.click(ChargesandTaxes).build().perform();
-		System.out.println(driver.getTitle()+ " EXPECTED" + titleInvest);
+		System.out.println(driver.getTitle() + " EXPECTED" + titleInvest);
 		softassert.assertEquals(titleInvest, driver.getTitle());
 		softassert.assertAll();
 		System.out.println("Successfully executed third Test Case");
 
 	}
-	
+
 	public void failTest() {
 		driver.navigate().back();
 		action.moveToElement(about).click().build().perform();
 		System.out.println("Test case is failed due to the requirement and understand purpose");
-		
+		System.out.println(driver.getTitle());
+
 	}
-	
+
 	public void waitSomeTime(WebElement ele) {
 		wait.until(ExpectedConditions.elementToBeClickable(ele));
 	}
@@ -115,6 +120,5 @@ public class HomePage {
 	public void waitElementShow(WebElement ele1) {
 		wait.until(ExpectedConditions.visibilityOf(ele1));
 	}
-	
 
 }

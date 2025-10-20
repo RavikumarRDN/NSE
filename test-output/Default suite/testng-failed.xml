@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="StockExchange.BaseStock">
+      <class name="Learn.BestLearn">
         <methods>
-          <include name="close"/>
-          <include name="openingInvest"/>
+          <include name="initial"/>
           <include name="initialization"/>
+          <include name="checkAuto"/>
         </methods>
-      </class> <!-- StockExchange.BaseStock -->
+      </class> <!-- Learn.BestLearn -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

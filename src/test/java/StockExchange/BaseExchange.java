@@ -1,10 +1,17 @@
 package StockExchange;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class BaseExchange extends BaseStock  {
 	
-   HomePage HPR=new HomePage();
+	HomePage HPR;
+	
+	@BeforeMethod
+	public void initiate() {
+   HPR=new HomePage(driver);
+	}
+	
 	@Test(priority=1)
 	public void openingAboutNSE() {
 		driver.get("https://www.nseindia.com/");

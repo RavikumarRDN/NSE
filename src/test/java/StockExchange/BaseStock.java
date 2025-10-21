@@ -39,13 +39,13 @@ public class BaseStock {
 		ts = (TakesScreenshot) driver;
 	}
    
-	/*
+	
 	@AfterClass
 	public void close() {
 		driver.close();
 		driver.quit();
 	}
-*/
+
 	public static ExtentReports gettingreports() {
 		String path = System.getProperty("user.dir") + "\\Reports\\AutomationResult.html";
 		reporter = new ExtentSparkReporter(path);

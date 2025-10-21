@@ -40,12 +40,8 @@ public class RahulHomePage extends BaseStock {
 	
 	public void checkAutoSuggest() throws InterruptedException {
 		Autosuggest.sendKeys("Ind");
-		//sc.waitSomeTime(suggestList);
 		Thread.sleep(5000);
-		//System.out.println(suggestList);
 		for(WebElement option : suggestList) {
-			System.out.println(option.getText());
-			System.out.println(option.getText());
 			if(option.getText().equalsIgnoreCase("India")) {
 				option.click();
 				break;

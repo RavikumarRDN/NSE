@@ -13,7 +13,7 @@ public class BestLearn extends BaseStock {
 		RH=new RahulHomePage(driver);
 	}
 	
-	@Test
+	@Test(priority=1)
 	public void checkRadioButton() {
 		driver.manage().deleteAllCookies();
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
@@ -21,7 +21,7 @@ public class BestLearn extends BaseStock {
 		RH.checkRadioButton();
 	}
 	
-	@Test
+	@Test(priority=2)
 	public void checkAuto() throws InterruptedException {
 		RH.checkAutoSuggest();
 	}

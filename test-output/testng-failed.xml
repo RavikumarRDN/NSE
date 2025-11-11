@@ -13,6 +13,7 @@
           <include name="openingList"/>
           <include name="testFailExample"/>
           <include name="openingAboutNSE"/>
+          <include name="initiate"/>
           <include name="initialization"/>
         </methods>
       </class> <!-- StockExchange.BaseExchange -->

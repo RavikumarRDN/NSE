@@ -21,6 +21,7 @@ import org.openqa.selenium.TakesScreenshot;
 
 /**
  * Ravikumar 14/10/2025 Implementing the base class and home page
+ * Due to the some of errors triggering in the jenkins that's why changing and updating in github
  */
 public class BaseStock {
 
